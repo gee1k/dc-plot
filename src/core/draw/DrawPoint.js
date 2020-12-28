@@ -39,7 +39,7 @@ class DrawPoint extends Draw {
   }
 
   _mouseClickHandler(e) {
-    this._position = e.surfacePosition
+    this._position = e.position
     this.unbindEvent()
     let point = new DC.Point(
       Transform.transformCartesianToWGS84(this._position)
@@ -49,7 +49,7 @@ class DrawPoint extends Draw {
   }
 
   _mouseMoveHandler(e) {
-    this._position = e.surfacePosition
+    this._position = e.position
     this._plot.viewer.tooltip.showAt(e.windowPosition, '单击选择点位')
   }
 }
